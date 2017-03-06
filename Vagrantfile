@@ -16,7 +16,7 @@ $node_ips = $num_nodes.times.collect { |n| $worker_ip_base + "#{n+2}" }
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   def customize_vm(config)
-    config.vm.box = "ubuntu/trusty64"
+    config.vm.box = "ubuntu/xenial"
 
     config.vm.provider :virtualbox do |v|
       v.customize ["modifyvm", :id, "--memory", $vm_mem]
@@ -25,7 +25,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       # Use faster paravirtualized networking
       v.customize ["modifyvm", :id, "--nictype1", "virtio"]
       v.customize ["modifyvm", :id, "--nictype2", "virtio"]
-	    v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+      v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
     end
   end
 

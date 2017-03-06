@@ -2,6 +2,8 @@
 
 #USE_ALIYUN_MIRROR=1
 
+/vagrant/provision-base.sh
+
 MANAGER_IP=$1
 
 if ! which docker >/dev/null 2>&1; then
