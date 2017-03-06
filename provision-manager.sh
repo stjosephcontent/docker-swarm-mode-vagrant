@@ -20,4 +20,3 @@ if ! which docker >/dev/null 2>&1; then
 	docker swarm init --listen-addr ${MANAGER_IP}:2377 --advertise-addr ${MANAGER_IP}
 	docker swarm join-token -q worker > /vagrant/worker_token
 fi
-

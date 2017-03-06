@@ -1,5 +1,6 @@
 #!/bin/bash
 
-apt update -y
-apt install python-pip
-pip install docker-compose
+apt-get update -y
+apt-get install -y python-pip
+pip install --upgrade pip
+pip install --upgrade docker-compose

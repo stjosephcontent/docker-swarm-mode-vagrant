@@ -16,7 +16,7 @@ $node_ips = $num_nodes.times.collect { |n| $worker_ip_base + "#{n+2}" }
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   def customize_vm(config)
-    config.vm.box = "ubuntu/xenial"
+    config.vm.box = "https://cloud-images.ubuntu.com/xenial/current/xenial-server-cloudimg-amd64-vagrant.box"
 
     config.vm.provider :virtualbox do |v|
       v.customize ["modifyvm", :id, "--memory", $vm_mem]
