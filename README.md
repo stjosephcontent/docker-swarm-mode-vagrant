@@ -8,16 +8,9 @@ It also fetches docker-compose, and is suitable for eperimenting with how docker
 
 # Usage
 
-For user in China, you can uncomment the following line in "provision-manager.sh", "provision-worker.sh" for using the [Aliyun Mirrors](http://mirrors.aliyun.com) to speed up the package installation/update.
-
-    #USE_ALIYUN_MIRROR=1
-
-
 This application is available in the form of a Docker image that you can run as a container by executing this command:
     
     vagrant up
-
-
 
 # Play with it
 
@@ -25,10 +18,11 @@ Run the Swarm manager
 
 	vagrant ssh node-1
 
-
 ```
 docker info
 docker node ls
+docker service ls
+docker stack --help
 ```
 
 # References
